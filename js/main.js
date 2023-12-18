@@ -161,26 +161,26 @@ window.start_authentication = function(username) {
 };
 
 window.handle_input = function(e) {   
-    try {
-        let username = document.getElementById("username");
-        if (localStorage.getItem(current_session) === null) {
-            show_message('Choose a proper session/desktop enviroment', 'error');
-            e.preventDefault();
-        }
-        start_authentication(username.value);
-        
-        if (e !== undefined)
-            e.preventDefault();
-    } catch (exception) {
-        if (localStorage.getItem(current_session) === null) {
-            show_message('Choose a proper session/desktop enviroment', 'error');
-            e.preventDefault();
-        }
-        start_authentication(lightdm.users[0].username);
-        
-        if (e !== undefined)
-            e.preventDefault();
+    if (localStorage.getItem(current_session) === null) {
+        show_message('Choose a proper session/desktop enviroment', 'error');
+        e.preventDefault();
     }
+    start_authentication(lightdm.users[0].username);
+    
+    if (e !== undefined)
+        e.preventDefault();
+}
+window.other_login = function(e) {   
+    let username = document.getElementById("username");
+    if (localStorage.getItem(current_session) === null) {
+        show_message('Choose a proper session/desktop enviroment', 'error');
+        e.preventDefault();
+    }
+    start_authentication(username.value);
+    
+    if (e !== undefined)
+        e.preventDefault();
+
 }
 
 document.addEventListener("click", close_all_select);
