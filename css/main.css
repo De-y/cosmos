@@ -46,7 +46,44 @@ body {
 #main_nav ul li:first-child {
     padding-left: 1em;
 }
-
+.login-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    transform: translate(25%);
+    text-align: center;
+}
+.login-default #userimg {
+    transform: translate(0%,5%);
+}
+.login-default .form-field {
+    align-self: center;
+    font-size: large;
+}
+.login-default button {
+    background-color: #0E1621;
+    border-radius: 10px;
+    transition: 500ms;
+    font-size: 25px;
+}
+.login-default button:hover {
+    background-color: #7d7d7d;
+    transition: 500ms;
+}
+body {
+    overflow: hidden;
+}
+.login-default {
+    background-color: #4882ff;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+}
+.login-other {
+    background-color: #4894ff;
+    border-radius: 10px;
+    width: 500px;
+}
 .right {
    float: right;
 }
