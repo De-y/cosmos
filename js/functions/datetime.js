@@ -21,7 +21,7 @@ function get_date_time() {
     if(second.toString().length == 1) {
          second = '0' + second;
     }
-    if (language == 'en-US') {
+    if (language != 'en-US') {
         return (day + ' ' + month + ' ' + year + ', ' + hour + ':' + minute);
     } else {
         return (month + ' ' + day + ' ' + year + ', ' + hour + ':' + minute);
