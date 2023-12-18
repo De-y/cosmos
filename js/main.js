@@ -161,15 +161,26 @@ window.start_authentication = function(username) {
 };
 
 window.handle_input = function(e) {   
-    let username = document.getElementById("username");
-    if (localStorage.getItem(current_session) === null) {
-        show_message('Choose a proper session/desktop enviroment', 'error');
-        e.preventDefault();
+    try {
+        let username = document.getElementById("username");
+        if (localStorage.getItem(current_session) === null) {
+            show_message('Choose a proper session/desktop enviroment', 'error');
+            e.preventDefault();
+        }
+        start_authentication(username.value);
+        
+        if (e !== undefined)
+            e.preventDefault();
+    } catch (exception) {
+        if (localStorage.getItem(current_session) === null) {
+            show_message('Choose a proper session/desktop enviroment', 'error');
+            e.preventDefault();
+        }
+        start_authentication(lightdm.users[0].username);
+        
+        if (e !== undefined)
+            e.preventDefault();
     }
-    start_authentication(username.value);
-    
-    if (e !== undefined)
-        e.preventDefault();
 }
 
 document.addEventListener("click", close_all_select);
@@ -183,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if(window.lightdm !== undefined && lightdm.users.length === 1) {
-        document.getElementById('username').value = lightdm.users[0].username;
+        // document.getElementById('username').value = lightdm.users[0].username;
         document.getElementById('usernm').textContent = lightdm.users[0].username;
         document.getElementById('password').focus();
     }

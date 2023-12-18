@@ -29,7 +29,16 @@
 	<div id="main_content">
 		<h1 id="pagetitle">Login</h1>
 		<img id="userimg"/>
-		<h2 id="usernm">Unknown</h2>
+		<form onsubmit="handle_input()">
+			<h2 id="usernm"></h2>
+			<input type="password"
+			id="password"
+			placeholder="password"
+			required
+			class="form-field"/>
+			<button type="submit" value="login">Login</button>
+		</form>
+		<h3> Or </h3>
 		<form id="login" onsubmit="handle_input()">
 			<input  type="text"
 			id="username"
@@ -43,8 +52,7 @@
 			placeholder="password"
 			required
 			class="form-field"/>
-			
-			<button type="submit" value="login">log in</button>
+			<button type="submit" value="login">Login</button>
 		</form>
 		
 		<ul class="flat-list" id="messages">
