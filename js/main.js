@@ -176,5 +176,19 @@ document.addEventListener("click", close_all_select);
 
 document.addEventListener('DOMContentLoaded', function() {
     e = document.getElementById('usernm')
-    e.textContent = lightdm.username
+    e.textContent = window.lightdm.username
+
+    if(window.lightdm !== undefined && lightdm.hostname !== undefined) {
+        document.getElementById('pagetitle').innerText = lightdm.hostname;
+    }
+
+    if(window.lightdm !== undefined && lightdm.users.length === 1) {
+        document.getElementById('username').value = lightdm.users[0].username;
+        document.getElementById('usernm').textContent = lightdm.users[0].username;
+        document.getElementById('password').focus();
+    }
+
+    add_session_options()
+    init_session_menu()
+
 });

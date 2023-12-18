@@ -1,7 +1,10 @@
 function get_date_time() {
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var now     = new Date(); 
+    const dotw = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+    const now     = new Date();
+    const day_of_the_week = dotw[now.getDay()] 
     var year    = now.getFullYear();
+    
     var month   = monthNames[now.getMonth()]; 
     var day     = now.getDate();
     var hour    = now.getHours();
@@ -20,7 +23,7 @@ function get_date_time() {
     if(second.toString().length == 1) {
          second = '0' + second;
     }
-    return (day + ', ' + month + ', ' + year + '; ' + hour + ':' + minute);
+    return (day_of_the_week + ', '  + month + ' ' + day + ' '+ year + '; ' + hour + ':' + minute);
 }
 
 document.addEventListener('DOMContentLoaded', function() {  
@@ -28,19 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
      setInterval(() => {
          time.innerHTML = get_date_time();
      }, 1000);
-     document.getElementById('time').innerHTML = get_date_time();
- 
-     if(window.lightdm !== undefined && lightdm.hostname !== undefined) {
-         document.getElementById('pagetitle').innerText = lightdm.hostname;
-     }
- 
-     if(window.lightdm !== undefined && lightdm.users.length === 1) {
-          document.getElementById('username').value = lightdm.users[0].username;
-         document.getElementById('password').focus();
-     }
- 
-     add_session_options()
-     init_session_menu()
-     
- });
+     document.getElementById('time').innerHTML = get_date_time();  
+});
  
