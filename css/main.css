@@ -50,21 +50,47 @@ body {
     display: flex;
     flex-direction: row;
     gap: 5rem;
-    transform: translate(25%);
+    align-self: center;
+    position: absolute;
     text-align: center;
+    transform: translateY(92.5%);
+}
+.l-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .login-default #userimg {
-    transform: translate(0%,5%);
+    transform: translate(0%,2.5%);
 }
 .login-default .form-field {
     align-self: center;
     font-size: large;
 }
+.login-other .form-field {
+    align-self: center;
+    font-size: large;
+    gap: 10px;
+}
+.login-other #userimg {
+    transform: translateY(2.5%);
+}
 .login-default button {
     background-color: #0E1621;
     border-radius: 10px;
     transition: 500ms;
-    font-size: 25px;
+    font-size: 20px;
+}
+.login-other button {
+    background-color: #0E1621;
+    border-radius: 10px;
+    transition: 500ms;
+    font-size: 20px;
+}
+.login-other button:hover {
+    background-color: #4882ff;
+    border-radius: 10px;
+    transition: 500ms;
 }
 .login-default button:hover {
     background-color: #7d7d7d;

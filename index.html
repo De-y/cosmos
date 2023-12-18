@@ -28,36 +28,39 @@
 	</nav>
 	<div id="main_content">
 		<h1 id="pagetitle">Login</h1>
-		<div class="login-cards">
-			<div class="login-default">
-				<img id="userimg" src="./assets/users/DefaultUser.png" width="250px" height="250px" style="border-radius: 100%;"/>
-				<form onsubmit="handle_input()" id="login">
-					<h2 id="usernm"></h2>
-					<input type="password"
-					id="password"
-					placeholder="password"
-					required
-					class="form-field"/>
-					<button type="submit" value="login">Login</button>
-				</form>
+		<div class="l-container">
+			<div class="login-cards">
+				<div class="login-default">
+					<img id="userimg" src="./assets/users/DefaultUser.png" width="250px" height="250px" style="border-radius: 100%;"/>
+					<form onsubmit="handle_input()" id="login">
+						<h2 id="usernm"></h2>
+						<input type="password"
+						id="password"
+						placeholder="password"
+						required
+						class="form-field"/>
+						<button type="submit" value="login">Login</button>
+					</form>
+				</div>
+				<div class="login-other">
+					<form id="login_other" onsubmit="handle_input()">
+						<img id="userimg" src="./assets/users/DefaultUser.png" width="250px" height="250px" style="border-radius: 100%;margin-left: auto; margin-right: auto;"/>
+						<br><br>
+						<input  type="text"
+						id="username"
+						placeholder="username"
+						class="form-field"
+						required
+						autofocus/><br>
+						<input type="password"
+						id="password"
+						placeholder="password"
+						required
+						class="form-field"/><br>
+						<button type="submit" value="login">Login</button>
+					</form>	
+				</div>			
 			</div>
-			<div class="login-other">
-				<form id="login_other" onsubmit="handle_input()">
-					<input  type="text"
-					id="username"
-					placeholder="username"
-					class="form-field"
-					required
-					autofocus/>
-					
-					<input type="password"
-					id="password"
-					placeholder="password"
-					required
-					class="form-field"/>
-					<button type="submit" value="login">Login</button>
-				</form>	
-			</div>			
 		</div>
 		<ul class="flat-list" id="messages">
 			
