@@ -1,4 +1,3 @@
-const language = 'en-US'
 function get_date_time() {
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var now     = new Date(); 
@@ -21,11 +20,7 @@ function get_date_time() {
     if(second.toString().length == 1) {
          second = '0' + second;
     }
-    if (language != 'en-US') {
-        return (day + ' ' + month + ' ' + year + ', ' + hour + ':' + minute);
-    } else {
-        return (month + ' ' + day + ' ' + year + ', ' + hour + ':' + minute);
-    }
+    return (day + ', ' + month + ', ' + year + '; ' + hour + ':' + minute);
 }
 
 document.addEventListener('DOMContentLoaded', function() {  
