@@ -176,5 +176,5 @@ document.addEventListener("click", close_all_select);
 
 document.addEventListener('DOMContentLoaded', function() {
     e = document.getElementById('usernm')
-    e.text == lightdm.authentication_user;
+    e.textContent = lightdm.users[0]
 });
