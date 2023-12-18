@@ -151,7 +151,8 @@ window.authentication_complete = function() {
         }
         lightdm.start_session_sync(choosen_session.key);
     } else {
-        show_message("Authentication Failed", "error");
+        show_message(lightdm.is_authenticated, "error");
+
     }
 };
 
